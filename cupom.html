@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupom</title>
+</head>
+<body>
+<h1 id="texto"> Descontos imperdíveis </h1>
+<p id="mensa"> Digite o cupom</p>
+<input type="text" id="cupom" placeholder="Cupom">
+<button id="botao" onclick="mensagem()">Verificar </button>
+<script>
+function mensagem(){
+const men =document.getElementById("texto");
+const cupomDigitado="compras";
+const ola =document.getElementById("mensa");
+const compra =document.getElementById("cupom").value;
+const bot =document.getElementById("botao");
+if(compra == cupomDigitado){
+mensa.innerHTML="parabéns!!!"
+}
+else{
+mensa.innerHTML="que pena :("
+}
+if(compra == cupomDigitado){
+men.innerHTML= "Cupom valido!!!"
+}
+else{
+men.innerHTML="Descupe , não encontamos este cupom"
+}
+}
+</script>
+</body>
+</html>
