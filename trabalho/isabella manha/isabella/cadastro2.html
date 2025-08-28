@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros e indicações</title>
+</head>
+<body>
+    <header>
+        <h1>BookTok</h1>
+    </header>
+    <h2>Aqui estão os queridinhos do momento:</h2>
+    <ul>
+        <li onclick="carregarLivro('Melhor do que nos filmes')">Melhor do que nos filmes</li>
+        <li onclick="carregarLivro('As mil partes do meu coração')">As mil partes do meu coração</li>
+        <li onclick="carregarLivro('Assim que acaba e Assim que começa')">Assim que acaba e Assim que começa</li>
+        <li onclick="carregarLivro('A hipótese do amor')">A hipótese do amor</li>
+    </ul>
+    <div id="detalhes"></div>
+    <footer>
+        <p>Me siga no skoob e compre pela amazon</p>
+    </footer>
+    <script>
+        async function carregarLivro(livro) {
+        try{
+            document.getElementById("detalhes").innerHTML = "Carregando informações do livro...";
+            await new Promise(resolve => setTimeout(resolve,2000))
+            let mensagem = {
+            'Melhor do que nos filmes':"Sucesso no TikTok, livro de Lynn Painter vai conquistar os fãs de comédias românticas com uma protagonista determinada a encontrar seu ''felizes para sempre''",
+            'As mil partes do meu coração':"Nem todo erro merece uma consequência. Às vezes a única coisa que ele merece é o perdão. Um livro sensível e viciante da rainha do romance, As mil partes do meu coração mostra que nunca é tarde demais para perdoar e reconstruir pontes com quem nos magoou.",
+            'Assim que acaba e Assim que começa':"Um romance sobre a força necessária para fazer as escolhas corretas nas situações mais difíceis. Da autora das séries Slammed e Hopeless.",
+            'A hipótese do amor':"Quando um relacionamento falso entre cientistas encontra a irresistível força da atração, as teorias de uma mulher sobre o amor, cuidadosamente calculadas, são postas à prova.",
+            };
+            document.getElementById("detalhes").innerHTML = mensagem[livro];
+        }
+        catch (erro) {
+            document.getElementById("detalhes").innerHTML = "Erro" + erro.mensage;
+        }
+    }
+    </script> 
+</body>
+</html>
