@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajar mais</title>
+    <style>
+             * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* Fundo branco suave */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            background-color: #8cb6ce; /* Azul clarinho */
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        ul li {
+            display: inline-block;
+            margin: 10px 15px;
+            padding: 12px 25px;
+            background-color: #1268af; /* Azul claro */
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        ul li:hover {
+            background-color: #0c3a55; /* Azul um pouco mais forte */
+            transform: scale(1.05); /* Leve aumento no tamanho */
+        }
+
+        #detalhes {
+            text-align: center;
+            padding: 25px;
+            background-color: #fff; /* Fundo branco para detalhes */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        #detalhes p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555; /* Cor de texto suave */
+        }
+
+        #detalhes img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #126da1; /* Azul clarinho no rodapé */
+            color: #fff;
+            margin-top: 30px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+   
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Viajar Mais</h1>
+    <p>escolha seu destino:</p>
+    <ul>
+        <li onclick="carregarDestino('Salvador-BA')">Salvador-BA</li>
+        <li onclick="carregarDestino('Natal-RN')">Natal-RN</li>
+        <li onclick="carregarDestino('Santiago-Chile')">Santiago-Chile</li>
+        <li onclick="carregarDestino('Buenos Aires-Argentina')">Buenos Aires-Argentina</li>
+    </ul>
+    <div id="detalhes"></div>
+    <footer>&copy; 2025 Viajar Mais</footer>
+   </header>
+    
+    <script>
+        async function carregarDestino(viagem) {
+            try{
+                document.getElementById("detalhes").innerHTML = "Carregando infromações da viagem";
+                await new Promise(resolve => setTimeout(resolve,2000))
+
+                let mensagem = {
+                    'Salvador-BA': {
+                     descricao:"Salvador é uma das cidades mais belas e visitadas do Brasil. Reúne inúmeras atrações para todos os gostos: praias e belezas naturais, locais históricos que remetem ao início da colonização brasileira, muita música, gastronomia típica, religiosidade, capoeira, além de possuir o maior carnaval do mundo.",
+                     imagem : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.farejaviagens.com.br%2Fsalvador-de-a-a-z-guia-completo-com-dicas-e-roteiros-imperdiveis%2F&psig=AOvVaw1lGZDmLqt3TK0GS3fNZZGn&ust=1757163641530000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCODSt-fWwY8DFQAAAAAdAAAAABAE"
+                    },
+                    'Natal-RN': {
+                     descricao:"O município é um importante centro turístico em razão da sua geografia formada por belas praias de clima Tropical. A cultura natalense também é muito rica e diversificada.",
+                     imagem : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.praiasdenatal.com.br%2Fnatal-rn%2F&psig=AOvVaw32KEN2FD8YKW_RU1d10pQV&ust=1757163892810000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKCo6d_XwY8DFQAAAAAdAAAAABAE",
+                   },
+                    'Santiago-Chile': {
+                     descricao :"Com paisagem cheia de parques e morros que servem de mirantes, a cidade oferece várias opções de lazer e entretenimento. Seu centro cabe na palma da mão, para conhecer tudo em detalhes.",
+                     imagem : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fbelvitur.com.br%2Fblog%2Fdestinos%2Fsantiago-bh-destino-chile%2F&psig=AOvVaw2R9Cm6YrF0N0lYFRWRxutb&ust=1757164029497000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMDg7qDYwY8DFQAAAAAdAAAAABAE"
+                  },
+                    'Buenos Aires-Argentina':{
+                     descricao:"Além da arquitetura charmosa, a cidade tem diversos pontos turísticos, parques, uma rica agenda cultural, variedade de restaurantes, opções de entretenimento noturno, shoppings e muitas lojas.",
+                     imagem : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.park-royalhotels.com%2Fpt%2Fblog%2Fo-que-fazer-em-buenos-aires-um-guia-para-explorar-a-capital-argentina.html&psig=AOvVaw2qiRX90CnGKc2XRIfHk9WP&ust=1757164112847000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOC0jMnYwY8DFQAAAAAdAAAAABAE"
+                    }
+                };
+               let info = mensagem[viagem];
+
+           document.getElementById("detalhes").innerHTML = `
+               <p>${info.descricao}</p>
+               <img src="${info.imagem}" alt="Capa viagem: ${viagem}" width="500" height="300">
+           `; 
+         } catch (erro) {
+                document.getElementById("detalhes").innerHTML = "Erro" + erro.menssage;
+               }
+            }            
+    </script>  
+</body>
+</html>
