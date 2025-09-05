@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajar mais</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Viajar Mais</h1>
+    <p>escolha seu destino:</p>
+    <ul>
+        <li onclick="carregarDestino('Salvador-BA')">Salvador-BA</li>
+        <li onclick="carregarDestino('Natal-RN')">Natal-RN</li>
+        <li onclick="carregarDestino('Santiago-Chile')">Santiago-Chile</li>
+        <li onclick="carregarDestino('Buenos Aires-Argentina')">Buenos Aires-Argentina</li>
+    </ul>
+    <div id="detalhes"></div>
+    <footer>&copy; 2025 Viajar Mais</footer>
+    <script>
+        async function carregarDestino(viagem) {
+            try{
+                document.getElementById("detalhes").innerHTML = "Carregando infromações da viagem";
+                await new Promise(resolve => setTimeout(resolve,2000))
+                let mensagem = {
+                    'Salvador-BA':'Salvador é uma das cidades mais belas e visitadas do Brasil. Reúne inúmeras atrações para todos os gostos: praias e belezas naturais, locais históricos que remetem ao início da colonização brasileira, muita música, gastronomia típica, religiosidade, capoeira, além de possuir o maior carnaval do mundo.',
+                    'Natal-RN': 'O município é um importante centro turístico em razão da sua geografia formada por belas praias de clima Tropical. A cultura natalense também é muito rica e diversificada.',
+                    'Santiago-Chile':'Com paisagem cheia de parques e morros que servem de mirantes, a cidade oferece várias opções de lazer e entretenimento. Seu centro cabe na palma da mão, para conhecer tudo em detalhes.',
+                    'Buenos Aires-Argentina':' Além da arquitetura charmosa, a cidade tem diversos pontos turísticos, parques, uma rica agenda cultural, variedade de restaurantes, opções de entretenimento noturno, shoppings e muitas lojas.',
+                };
+                document.getElementById("detalhes").innerHTML = mensagem[viagem];
+            }
+            catch (erro){
+                document.getElementById("detalhes").innerHTML = "Erro" + erro.mensage;
+            }
+    
+
+            
+        }
+    </script>
+    </header>
+</body>
+</html>
